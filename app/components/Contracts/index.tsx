@@ -1,16 +1,9 @@
-"use client";
-
-import {EventHandler, useState} from "react";
-import { Contracts } from "../Contracts";
-
-export function Form() {
-    const [addContract, setAddContract] = useState<boolean>(false);
-
-    return(
-        <form className="w-full flex flex-col gap-4 rounded-lg">
+export function Contracts() {
+    return (
+        <div className="col-span-1 p-4 flex flex-col gap-2 bg-[#2c2c2a]">
             <section className="col-span-1 p-4 flex flex-col gap-2 bg-[#2c2c2a]">
                 <div>
-                    <h3 className="text-sm text-[#c3c2b7]">Dados do freelancer</h3>
+                    <h3 className="px-2 py-2 text-sm text-[#6da7ec] bg-[#032042] rounded-lg">Contrato {crypto.randomUUID()}</h3>
                 </div>
 
                 <div className="flex flex-col text-[#c3c2b7]">
@@ -45,15 +38,6 @@ export function Form() {
                     </div>
                 </div>
             </section>
-            <button onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                e.preventDefault();
-                setAddContract(!addContract);
-            }} className="w-4/12 px-4 ml-auto flex items-center justify-end gap-2 rounded-lg border text-sm text-right cursor-pointer">
-                <span className="text-lg">+</span>
-                <span>Adicionar Contrato</span>
-            </button>
-
-            {addContract && <Contracts />}
-        </form>
+        </div>
     )
 }
